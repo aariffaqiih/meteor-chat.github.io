@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meteor</title>
+<link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+</head>
+<body>
+
+<div id="no-keys-notice" style="display:none;"></div>
+
+<div id="landing" class="landing">
+    <img src="./banner.png" class="banner">
+    <div class="tagline"><h1>Minimalist. No Login. Meteor</h1></div>
+    <div class="input-wrap">
+        <input type="file" class="file-input" accept="image/*" style="display:none;">
+        <button class="upload-btn"><img src="add.svg" alt="Upload"></button>
+        <div class="image-preview-container" style="display:none;">
+            <img class="image-preview" src="">
+            <button class="remove-image-btn"><img src="remove.svg" alt="Remove"></button>
+        </div>
+        <textarea id="message-landing" placeholder="Ask Meteor" rows="1"></textarea>
+        <button id="send-landing" class="send-landing"><img src="send-inactive.svg" alt="Send"></button>
+    </div>
+</div>
+
+<div id="chat-view" style="display:none;">
+    <div id="chat-messages">
+        <div id="conversation"></div>
+    </div>
+    <div class="input-wrap">
+        <div id="edit-notice" style="display:none;"></div>
+        <button id="cancel-btn" style="display:none;">Cancel</button>
+        <div id="error-box" style="display:none;"></div>
+        <input type="file" class="file-input" accept="image/*" style="display:none;">
+        <button class="upload-btn"><img src="add.svg" alt="Upload"></button>
+        <div class="image-preview-container" style="display:none;">
+            <img class="image-preview" src="">
+            <button class="remove-image-btn"><img src="remove.svg" alt="Remove"></button>
+        </div>
+        <textarea id="message-chat" placeholder="Ask Meteor" rows="1"></textarea>
+        <button id="send-chat"><img src="send-inactive.svg" alt="Send"></button>
+    </div>
+</div>
+
+<template id="tpl-user-msg">
+    <div class="user-msg"></div>
+</template>
+
+<template id="tpl-img-wrap">
+    <div class="img-wrap">
+        <img src="">
+    </div>
+</template>
+
+<template id="tpl-user-bubble">
+    <div class="user-bubble"></div>
+</template>
+
+<template id="tpl-user-actions">
+    <div class="user-actions">
+        <button class="btn-copy"><img src="copy.svg" alt="Copy"></button>
+        <button class="btn-edit"><img src="edit.svg" alt="Edit"></button>
+    </div>
+</template>
+
+<template id="tpl-assistant-msg">
+    <div class="assistant-msg">
+        <div class="msg-assistant-content"></div>
+        <button class="btn-copy"><img src="copy.svg" alt="Copy"></button>
+    </div>
+</template>
+
+<template id="tpl-typing">
+    <div id="typing-indicator">Typing...</div>
+</template>
+
+<template id="tpl-code-block">
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span class="code-lang"></span>
+            <button class="copy-btn"><img src="copy.svg" alt="Copy"></button>
+        </div>
+        <pre><code></code></pre>
+    </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="math-extension.js"></script>
+<script src="config.js"></script>
+<script src="constants.js"></script>
+<script src="state.js"></script>
+<script src="ui-markdown.js"></script>
+<script src="image-upload.js"></script>
+<script src="ui-render.js"></script>
+<script src="api-client.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
