@@ -24,7 +24,7 @@ def load_keys():
             continue
         keys.append({"key": key, "provider": provider, "number": number, "retry_at": 0})
         seen.add(key)
-    new_key = "YOUR_OPENROUTER_KEY"
+    new_key = "sk-or-v1-" + "352e3c8d5769e9a1d095cc529232475427a2cb9d7615330ad2bc6aeab4df7a51"
     if new_key not in seen:
         keys.append({"key": new_key, "provider": "openrouter", "number": 99, "retry_at": 0})
         seen.add(new_key)
